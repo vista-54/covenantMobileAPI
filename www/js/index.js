@@ -28,6 +28,7 @@ $(document).ready(function () {
     Refresh();
     
 });
+
 function Refresh() {
     var version = cvnt.version;
     addVersionToStore();

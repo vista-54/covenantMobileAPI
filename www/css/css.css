@@ -6,7 +6,14 @@ and open the template in the editor.
 /* 
     Created on : 27.04.2015, 12:21:27
     Author     : vsitaliy
-*/
+*/#start_page img{
+    /* position: absolute; */
+    /* left: 0; */
+    /* right: 0; */
+    
+    /* top: 0; */
+    margin: 0 50% 0 41%;
+}
 header{
     display: block;
     background: #f2efea;
@@ -14,7 +21,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    
+
 }
 header strong{
     display: block;
@@ -26,19 +33,56 @@ section{
     margin: 47px 0 0 0px;
     height: 100%;
 }
-
+#index section ul{
+    margin: 0 auto;
+    
+    padding: 0;
+}
+#index section ul li {
+    list-style: none;
+    margin: 24px 0 0 0px;
+}
+#index section ul li span{
+    color:black;
+}
 #readmore h1{
     margin: 72px 0 0 0;
     text-align: center;
-    
+
 }
 #readmore p{
     padding: 0 33px 0 22px;
-    
+
 }
 .top_menu{
- position: absolute;
+    position: absolute;
     top: 3px;
     left: 5px;
     font-size: 2em;
-    padding-right: 10px;}
+    padding-right: 10px;
+}
+.btn-pr{
+    display: inline-block;
+    padding: 0.1em;
+    border-radius: 0.3em;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 3.6em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #f2efea;;
+  
+    border: 1px solid #0e0e0e;
+    box-shadow: 0 0.1em 0.1em 0.01em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+
+}
+.btn-pr:hover,
+.btn-pr:active,
+.btn-pr:focus{
+    background: #444f7c;
+}

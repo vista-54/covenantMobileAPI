@@ -25,14 +25,28 @@ and open the template in the editor.
     </head>
     <body>
         <div id="start_page">
+            <img src="images/logo-cpc.png">
             <div id="index">
-                <header>
-                    <strong>News and Announcements</strong>    
-                </header>
-                <section >
-                    <div id="list"></div>
-                    <div id="text_body"></div>
+                
+                <section>
+                    <ul>
+                        <li>
+                            <button class="btn-pr btn-submit" onclick="loadContent('Who_we_are')"><span>Who we are</span></button>
+
+                        </li>
+                        <li>
+                            <button class="btn-pr btn-submit" onclick="loadContent('News_and_Announcements')"><span>News and Announcements</span></button>
+                        </li>
+                        <li>
+                            <button class="btn-pr btn-submit" onclick="loadContent('location')"><span>location</span></button>
+                        </li>
+                        <li>
+                            <button class="btn-pr btn-submit" onclick="loadContent('Calendar')"><span>Calendar</span></button>
+                        </li>
+
+                    </ul>
                 </section>
+
             </div>
         </div>
 

@@ -83,10 +83,43 @@ function addReadMoreToStore() {
 function loadStartPage(){
     
 }
-function reload() {
-  $('#start_page').load('index.html #index', function(){
-            Refresh();
-           
+function reload() {}
+
+function loadContent(page) {
+    if (page === 'home') {
+        $('#start_page').load('index.html #index', function () {
+
         });
-   
-}
+
+    }
+    if (page === 'who_we_are') {
+        $('#body').load('main.html #inner-body', function () {
+            Complete_form();
+
+            scrollbugfixed();
+        });
+
+    }
+    if (page === 'News_and_Announcements') {
+        $('#start_page').load('news_and_announcements.html #inner-body', function () {
+        Refresh();
+        });
+
+    }
+    if (page === 'location') {
+        $('#body').load('main.html #inner-body', function () {
+            Complete_form();
+
+            scrollbugfixed();
+        });
+
+    }
+    if (page === 'Calendar') {
+        $('#body').load('main.html #inner-body', function () {
+            Complete_form();
+
+            scrollbugfixed();
+        });
+
+    }
+    }

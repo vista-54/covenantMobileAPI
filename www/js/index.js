@@ -8,9 +8,11 @@ var cvnt = {
     originalHost: null,
     host: null,
     version: 0,
+    lastedit:0,
     readTitle: [],
     readMore: [],
-    title:[]
+    title:[],
+    WhoWeAre:[]
 };
 var store = window.localStorage;
 function readHost() {
@@ -33,6 +35,7 @@ function Refresh() {
     var version = cvnt.version;
     addVersionToStore();
     var data = {};
+    data.page="News_and_Announcements";
     data.version = version;
     SendRequestToDataBase(data, afterRefresh);
     function afterRefresh(result) {
@@ -83,34 +86,55 @@ function addReadMoreToStore() {
 function loadStartPage(){
     
 }
-function reload() {}
-
+function lastEdit()
+{
+    var lastedit=cvnt.lastedit;
+    var data={};
+    data.page="Who_we_are";
+    data.lastedit=lastedit;
+    GetLastedit(data,afterResponse);
+      function afterResponse(result) {
+        console.log(result);
+//        cvnt.lastedit=obj.data.changed[0];
+        for (var i in result.data)
+        {
+            var obj = result.data[i];
+//            var text = "<h1>" + obj.title + "</h1><br><button onclick=" + "ReadMore("+ i + ")" + ">Read More</button>";
+//            cvnt.readTitle.push(text);
+            var optiizeText={title:"<h1>" + obj.title + "</h1><br>",body:"<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>",lastedit:obj.changed};
+            cvnt.WhoWeAre.push(optiizeText);
+            cvnt.lastedit=cvnt.WhoWeAre[0].lastedit;
+            
+        }
+        $("#list-who").html(cvnt.WhoWeAre[0].title+cvnt.WhoWeAre[0].body);    
+    }
+//    cvnt.WhoWeAre[0].title+cvnt.WhoWeAre[0].body
+}
+function lastEditLocation(){
+    
+}
 function loadContent(page) {
     if (page === 'home') {
         $('#start_page').load('index.html #index', function () {
-
+            
         });
 
     }
     if (page === 'who_we_are') {
-        $('#body').load('main.html #inner-body', function () {
-            Complete_form();
-
-            scrollbugfixed();
+        $('#start_page').load('pages.html #who_we_are', function () {
+            lastEdit();
         });
 
     }
     if (page === 'News_and_Announcements') {
-        $('#start_page').load('news_and_announcements.html #inner-body', function () {
+        $('#start_page').load('pages.html #inner-body', function () {
         Refresh();
         });
 
     }
     if (page === 'location') {
         $('#body').load('main.html #inner-body', function () {
-            Complete_form();
-
-            scrollbugfixed();
+           lastEditLocation();
         });
 
     }

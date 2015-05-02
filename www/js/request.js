@@ -9,8 +9,9 @@
 cvnt.originalHost = 'http://159.224.220.250/public_html/mobile/';
 
 var url = {
-    refresh: 'refresh.php',
-    readMore:'readMore.php'
+    refresh: 'refresh.php'
+//    readMore:'readMore.php'
+   
 };
 function SendRequestToDataBase(formData, callback) {
     var urlToUpload = cvnt.host + url.refresh;
@@ -22,7 +23,7 @@ function SendRequestToDataBase(formData, callback) {
     };
     ajaxRequest(params, callback);
 }
-function SendRequestToDataBaseNews(){
+function GetLastedit(formData, callback) {
     var urlToUpload = cvnt.host + url.refresh;
     var params = {
         url: urlToUpload,
@@ -32,6 +33,16 @@ function SendRequestToDataBaseNews(){
     };
     ajaxRequest(params, callback);
 }
+//function SendRequestToDataBaseNews(){
+//    var urlToUpload = cvnt.host + url.refresh;
+//    var params = {
+//        url: urlToUpload,
+//        type: 'POST',
+//        formData: formData,
+//        needBlock: false
+//    };
+//    ajaxRequest(params, callback);
+//}
 function ajaxRequest(params, callback) {
     //hideKeyboard();
     var isConnected = checkConnection();
@@ -106,7 +117,7 @@ function ajaxRequest(params, callback) {
                 msg = eMsg.ajaxAborted;
             } else if (jqXHR.status === 0) {
                 msg = eMsg.connectionError;
-                
+
             } else if (jqXHR.status === 404) {
                 msg = eMsg.urlNotFound;
             } else if (jqXHR.status === 500) {
@@ -124,5 +135,5 @@ function ajaxRequest(params, callback) {
             return;
         }
     });
-   
+
 }

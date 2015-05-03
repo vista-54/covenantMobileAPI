@@ -33,6 +33,16 @@ function GetLastedit(formData, callback) {
     };
     ajaxRequest(params, callback);
 }
+function GetLasteditloc(formData, callback) {
+    var urlToUpload = cvnt.host + url.refresh;
+    var params = {
+        url: urlToUpload,
+        type: 'POST',
+        formData: formData,
+        needBlock: false
+    };
+    ajaxRequest(params, callback);
+}
 //function SendRequestToDataBaseNews(){
 //    var urlToUpload = cvnt.host + url.refresh;
 //    var params = {

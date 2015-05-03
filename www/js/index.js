@@ -9,10 +9,12 @@ var cvnt = {
     host: null,
     version: 0,
     lastedit:0,
+    loclasedit:0,
     readTitle: [],
     readMore: [],
     title:[],
-    WhoWeAre:[]
+    WhoWeAre:[],
+    Location_info:[]
 };
 var store = window.localStorage;
 function readHost() {
@@ -39,7 +41,7 @@ function Refresh() {
     data.version = version;
     SendRequestToDataBase(data, afterRefresh);
     function afterRefresh(result) {
-        console.log(result.data);
+        console.log(result);
 //        cvnt.version=obj.data.nid[0];
         for (var i in result.data)
         {
@@ -111,7 +113,26 @@ function lastEdit()
 //    cvnt.WhoWeAre[0].title+cvnt.WhoWeAre[0].body
 }
 function lastEditLocation(){
-    
+    var lastedit=cvnt.loclasedit;
+    var data={};
+    data.page="location";
+    data.lastedit=lastedit;
+    GetLasteditloc(data,afterResponse);
+      function afterResponse(result) {
+        console.log(result);
+//        cvnt.lastedit=obj.data.changed[0];
+        for (var i in result.data)
+        {
+            var obj = result.data[i];
+//            var text = "<h1>" + obj.title + "</h1><br><button onclick=" + "ReadMore("+ i + ")" + ">Read More</button>";
+//            cvnt.readTitle.push(text);
+            var optiizeText={title:"<h1>" + obj.title + "</h1><br>",body:"<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>",lastedit:obj.changed};
+            cvnt.Location_info.push(optiizeText);
+            cvnt.lastedit=cvnt.Location_info[0].lastedit;
+            
+        }
+        $("#list-loc").html(cvnt.Location_info[0].title+cvnt.Location_info[0].body);    
+    }
 }
 function loadContent(page) {
     if (page === 'home') {
@@ -133,7 +154,7 @@ function loadContent(page) {
 
     }
     if (page === 'location') {
-        $('#body').load('main.html #inner-body', function () {
+        $('#start_page').load('pages.html #location', function () {
            lastEditLocation();
         });
 

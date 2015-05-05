@@ -81,3 +81,22 @@ section{
     font-size: 100%;
 
 }
+section{
+    text-align: center;
+    padding: 28px 0 0 0;
+}
+.calendar{
+    
+}
+.calendar_date{
+    display: block;
+    margin: 26px 0 -20px 0;
+    font-weight: bold;
+    
+    color: grey;
+}
+.calendar_title{
+    display: block;
+    
+    margin: 0px 0 0 0;
+}

@@ -11,4 +11,5 @@
     <access origin="*"/>
     <icon src="res/icon/icon.png"/>
     <splash src="res/screen/screen.png"/>
+    <gap:splash src="res/screen/screen.png"/>
 </widget>

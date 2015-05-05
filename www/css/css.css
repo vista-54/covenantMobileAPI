@@ -6,10 +6,8 @@ and open the template in the editor.
 /* 
     Created on : 27.04.2015, 12:21:27
     Author     : vsitaliy
-*/#start_page img{
-    padding: 8px 0px 0 30px;
-    
-}
+*/
+
 header{
     display: block;
     background: #f2efea;
@@ -95,4 +93,8 @@ section{
     display: block;
     
     margin: 0px 0 0 0;
+}
+.images{
+    text-align: center;
+    
 }

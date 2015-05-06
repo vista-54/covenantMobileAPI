@@ -30,7 +30,7 @@ function readHost() {
 $(document).ready(function () {
     console.log('doc.ready');
     readHost();
-    Refresh();
+//    Refresh();
 
 });
 
@@ -49,15 +49,14 @@ function Refresh() {
             var obj = result.data[i];
 
             var text = "<h1>" + obj.title + "</h1><br><button onclick=" + "ReadMore(" + i + ")" + ">Read More</button>";
-            cvnt.readTitle.push(text);
+            cvnt.readTitle.unshift(text);
             var optiizeText = "<h1>" + obj.title + "</h1><br>";
-            cvnt.title.push(optiizeText);
+            cvnt.title.unshift(optiizeText);
             var body = "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>";
-            cvnt.readMore.push(body);
+            cvnt.readMore.unshift(body);
             cvnt.version = result.data[0].nid;
 
         }
-
         addVersionToStore();
         addReadTitleToStore();
         addReadMoreToStore();
@@ -107,7 +106,6 @@ function lastEdit()
             var optiizeText = {title: "<h1>" + obj.title + "</h1><br>", body: "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>", lastedit: obj.changed};
             cvnt.WhoWeAre.push(optiizeText);
             cvnt.lastedit = cvnt.WhoWeAre[0].lastedit;
-
         }
         $("#list-who").html(cvnt.WhoWeAre[0].title + cvnt.WhoWeAre[0].body);
     }
@@ -136,6 +134,8 @@ function lastEditLocation() {
     }
 }
 function RequestCalendarData() {
+    
+    cvnt.Calendar=[];
     var $calendarForm = $('#calendar');
     var date = $calendarForm.find('input[name=date]').val();
     var data = {};
@@ -144,14 +144,14 @@ function RequestCalendarData() {
     GetEvent(data, afterResponse);
     function afterResponse(result) {
         console.log(result.data);
-    
+        
         for (var i in result.data)
         {
             var obj = result.data[i];
-            var row = "<span class=\"calendar_date\">"+obj.field_date_value+"</span><br>"+"<span class=\"calendar_title\">"+obj.title+"</span><br></div>";
+            var row = "<span class=\"calendar_date\">" + obj.field_date_value + "</span><br>" + "<span class=\"calendar_title\">" + obj.title + "</span><br></div>";
             cvnt.Calendar.push(row);
         }
-        
+
         $("#list-cal").html(cvnt.Calendar);
     }
 

@@ -295,7 +295,7 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 function Calendar() {
-    $(document).ready(function () {
+    
 
         $('#calendar').fullCalendar({
             header: {
@@ -305,7 +305,6 @@ function Calendar() {
             },
             viewRender: function (view, element) {
 //                var date=new Date();
-
                 var date = $('#calendar').fullCalendar('getDate');
                 cvnt.getDate = dateFormat(date, 'isoDate'); //date.format();
 //                alert(cvnt.getDate);
@@ -315,7 +314,7 @@ function Calendar() {
 
 
 
-    });
+  
 
 }
 

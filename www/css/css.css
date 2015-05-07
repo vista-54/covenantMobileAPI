@@ -10,7 +10,7 @@ and open the template in the editor.
 
 header{
     display: block;
-    background: #444f7c;
+    background: #f8ce41;
     position: fixed;
     top: 0;
     left: 0;
@@ -69,7 +69,7 @@ section{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     /* box-sizing: border-box; */
-    background: #444f7c;;
+    background: #f8ce41;;
   
     border: none; 
     /* box-shadow: 0 0.1em 0.1em 0.01em rgba(0, 0, 0, 0.5); */

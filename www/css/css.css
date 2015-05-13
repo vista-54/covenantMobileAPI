@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 header{
+    z-index: 1;
     display: block;
     background: #f8ce41;
     position: fixed;
@@ -19,6 +20,7 @@ header{
     margin-bottom: 16px;
 }
 header strong{
+    /* z-index: 99999999999; */
     display: block;
     text-align: center;
     font-size: 22px;

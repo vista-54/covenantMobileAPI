@@ -15,15 +15,11 @@
     <preference name="phonegap-version" value="3.6.3"/>
     <preference name="orientation" value="portrait" />
 
-<!--    <preference name="StatusBarBackgroundColor" value="#000000" />-->
-    
     <!-- plugins -->
     <gap:plugin name="org.apache.cordova.splashscreen"/>
     <gap:plugin name="org.apache.cordova.console"/>
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
-    <gap:plugin name="de.appplant.cordova.plugin.printer" version="0.6.1" />
-    <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
     
     <preference name="permissions" value="none" />

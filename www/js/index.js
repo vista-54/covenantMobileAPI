@@ -46,6 +46,9 @@ $(document).ready(function () {
 });
 
 function Refresh() {
+//    cvnt.readTitle=[];
+//    cvnt.title=[];
+//    cvnt.readMore=[];
     var version = cvnt.version;
     addVersionToStore();
     var data = {};
@@ -55,6 +58,7 @@ function Refresh() {
     function afterRefresh(result) {
         console.log(result);
 //        cvnt.version=obj.data.nid[0];
+    var lastnum=result.data.length-1;
         for (var i in result.data)
         {
             var obj = result.data[i];
@@ -65,7 +69,7 @@ function Refresh() {
             cvnt.title.unshift(optiizeText);
             var body = "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>";
             cvnt.readMore.unshift(body);
-            cvnt.version = result.data[0].nid;
+            cvnt.version = result.data[lastnum].nid;
 
         }
         addVersionToStore();
@@ -88,7 +92,8 @@ function ReadMore($var) {
 }
 function InsertDataToNewPage($var) {
 //     $("#readmore").html();
-    $("#readmore").html(cvnt.title[$var] + cvnt.readMore[$var]);
+var num=cvnt.title.length-1-$var;
+    $("#readmore").html(cvnt.title[num] + cvnt.readMore[num]);
 }
 function addReadTitleToStore() {
     store.setItem('ReadTitle', cvnt.readTitle);

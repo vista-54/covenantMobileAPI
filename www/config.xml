@@ -10,7 +10,7 @@
     <content src="index.html"/>
     <access origin="*"/>
     <preference name="fullscreen" value="false"/> 
-    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <icon src="res/icon/icon.png"/>
     <splash src="res/screen/screen.png"/>
     <gap:splash src="res/screen/screen.png"/>

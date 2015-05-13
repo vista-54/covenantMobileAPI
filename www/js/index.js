@@ -119,7 +119,7 @@ function lastEdit()
             var obj = result.data[i];
 //            var text = "<h1>" + obj.title + "</h1><br><button onclick=" + "ReadMore("+ i + ")" + ">Read More</button>";
 //            cvnt.readTitle.push(text);
-            var optiizeText = {title: "<h1>" + obj.title + "</h1><br>", body: "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>", lastedit: obj.changed};
+            var optiizeText = {title: "<h1>" + obj.title + "</h1>", body: "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>", lastedit: obj.changed};
             cvnt.WhoWeAre.push(optiizeText);
             cvnt.lastedit = cvnt.WhoWeAre[0].lastedit;
         }
@@ -141,7 +141,7 @@ function lastEditLocation() {
             var obj = result.data[i];
 //            var text = "<h1>" + obj.title + "</h1><br><button onclick=" + "ReadMore("+ i + ")" + ">Read More</button>";
 //            cvnt.readTitle.push(text);
-            var optimizeText = {title: "<h1>" + obj.title + "</h1><br>", body: "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>", lastedit: obj.changed};
+            var optimizeText = {title: "<h1>" + obj.title + "</h1>", body: "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>", lastedit: obj.changed};
             cvnt.Location_info.push(optimizeText);
             cvnt.lastedit = cvnt.Location_info[0].lastedit;
 

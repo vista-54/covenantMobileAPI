@@ -50,9 +50,11 @@ section{
 
 }
 #readmore p{
-    padding: 0 33px 0 22px;
+    padding: 0px 60px 0 15px;
 
     overflow: hidden;
+    margin: 0 60px 0 0;
+    /* display: block; */
 }
 .top_menu{
     position: absolute;
@@ -133,6 +135,8 @@ section{
 #list-loc{
     margin: 60px 0 0 20px;
     
+    cursor: default;
+    pointer-events: none;
 }
 #list{
     margin: 60px 0 0 20px;
@@ -154,5 +158,15 @@ section{
     
 }
 #readmore{
+    pointer-events: none;     cursor: default;
     
+}
+.body_value{
+    display: block;
+    padding: 0;
+    margin: 0px 10% 0 0px;
+    text-align: left;
+}
+#body_read_page{
+   
 }

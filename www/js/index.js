@@ -337,4 +337,33 @@ function Calendar() {
 
 }
 
+var deviceIsReady = false;
+function onDeviceReady() {
+    log('Device is ready');
+    StatusBar.overlaysWebView(false);
+    
+    deviceIsReady = true;
+    navigator.splashscreen.hide();
+    document.addEventListener('backbutton', function (e) {
+        e.preventDefault();
+        $('section:visible').find('.back-button').click();
+    }, false);
 
+    document.addEventListener('menubutton', function (e) {
+        e.preventDefault();
+
+        function onConfirm(buttonIndex) {
+            if (buttonIndex === 2) {
+                exitFromApp();
+            }
+        }
+
+        navigator.notification.confirm(
+                'Exit from app?',
+                onConfirm,
+                'Exit',
+                'Cancel, Ok'
+                );
+    }, false);
+
+}

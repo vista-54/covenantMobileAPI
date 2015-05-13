@@ -20,6 +20,14 @@ var cvnt = {
     Calendar: [],
     getDate: null
 };
+isMobile=false;
+if (document.URL.indexOf("http://") === -1 && document.URL.indexOf("https://") === -1) {
+    isMobile = true;
+}
+if (isMobile) {
+    document.write('<script charset="utf-8" src="cordova.js" ><\/script>');
+}
+
 var store = window.localStorage;
 function readHost() {
     var storedHost = store.getItem('host');
@@ -338,19 +346,25 @@ function Calendar() {
 
 
 }
-var deviceIsReady = false;
-function onDeviceReady() {
-    log('Device is ready');
-    StatusBar.overlaysWebView(false);
-    deviceIsReady = true;
-    navigator.splashscreen.hide();
+if (isMobile) {
+    document.addEventListener('deviceready', onDeviceReady, false);
+} else {
+    document.addEventListener('DOMContentLoaded', onDeviceReady, false);
 }
-document.addEventListener("deviceready", onDeviceReady, false);
-function isDeviceReady() {
-    if (deviceIsReady === false) {
-        showErrorMessage('device not ready');
-        log('device not ready');
-        return false;
-    }
-    return true;
+
+//function onDeviceReady() {
+//    StatusBar.overlaysWebView(false);
+//    console.log('device ready');
+//    init();
+//
+//
+//}
+function onDeviceReady() {
+if(isMobile) {
+   StatusBar.overlaysWebView(false);
+}
+    console.log('device ready');
+  
+
+
 }

@@ -25,6 +25,7 @@
     <gap:plugin name="de.appplant.cordova.plugin.printer" version="0.6.1" />
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+    
     <preference name="permissions" value="none" />
     <feature name="http://api.phonegap.com/1.0/network" />
    

@@ -52,6 +52,7 @@ section{
 #readmore p{
     padding: 0 33px 0 22px;
 
+    overflow: hidden;
 }
 .top_menu{
     position: absolute;
@@ -150,5 +151,8 @@ section{
 }
 #text_body-who{
     /* margin: -144px 0 0 0; */
+    
+}
+#readmore{
     
 }

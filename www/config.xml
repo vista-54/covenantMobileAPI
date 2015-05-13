@@ -9,6 +9,7 @@
     </author>
     <content src="index.html"/>
     <access origin="*"/>
+    <preference name="fullscreen" value="false"/> 
     <preference name="StatusBarOverlaysWebView" value="true" />
     <icon src="res/icon/icon.png"/>
     <splash src="res/screen/screen.png"/>

@@ -65,9 +65,9 @@ function Refresh() {
 //ReadMore(" + i + ")
             var text = "<a onclick='ReadMore(" + i + ")'><h1>" + obj.title + "</h1><p>Read More</p></a>";
             cvnt.readTitle.unshift(text);
-            var optiizeText = "<h1>" + obj.title + "</h1><br>";
+            var optiizeText = "<h1>" + obj.title + "</h1>";
             cvnt.title.unshift(optiizeText);
-            var body = "<p><span class=" + "body_value" + ">" + obj.body_value + "</span></p>";
+            var body =   obj.body_value ;
             cvnt.readMore.unshift(body);
             cvnt.version = result.data[lastnum].nid;
 

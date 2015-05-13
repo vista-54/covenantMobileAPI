@@ -341,7 +341,6 @@ var deviceIsReady = false;
 function onDeviceReady() {
     log('Device is ready');
     StatusBar.overlaysWebView(false);
-    
     deviceIsReady = true;
     navigator.splashscreen.hide();
     document.addEventListener('backbutton', function (e) {
@@ -366,4 +365,13 @@ function onDeviceReady() {
                 );
     }, false);
 
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+function isDeviceReady() {
+    if (deviceIsReady === false) {
+        showErrorMessage('device not ready');
+        log('device not ready');
+        return false;
+    }
+    return true;
 }

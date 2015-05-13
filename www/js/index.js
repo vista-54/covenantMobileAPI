@@ -336,7 +336,7 @@ function Calendar() {
 
 
 }
-
+document.addEventListener("deviceready", onDeviceReady, false);
 var deviceIsReady = false;
 function onDeviceReady() {
     log('Device is ready');
@@ -366,12 +366,4 @@ function onDeviceReady() {
     }, false);
 
 }
-document.addEventListener("deviceready", onDeviceReady, false);
-function isDeviceReady() {
-    if (deviceIsReady === false) {
-        showErrorMessage('device not ready');
-        log('device not ready');
-        return false;
-    }
-    return true;
-}
+

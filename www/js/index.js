@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+/* global StatusBar */
+
 var cvnt = {
     originalHost: null,
     host: null,
@@ -336,34 +338,19 @@ function Calendar() {
 
 
 }
-document.addEventListener("deviceready", onDeviceReady, false);
 var deviceIsReady = false;
 function onDeviceReady() {
     log('Device is ready');
     StatusBar.overlaysWebView(false);
     deviceIsReady = true;
     navigator.splashscreen.hide();
-    document.addEventListener('backbutton', function (e) {
-        e.preventDefault();
-        $('section:visible').find('.back-button').click();
-    }, false);
-
-    document.addEventListener('menubutton', function (e) {
-        e.preventDefault();
-
-        function onConfirm(buttonIndex) {
-            if (buttonIndex === 2) {
-                exitFromApp();
-            }
-        }
-
-        navigator.notification.confirm(
-                'Exit from app?',
-                onConfirm,
-                'Exit',
-                'Cancel, Ok'
-                );
-    }, false);
-
 }
-
+document.addEventListener("deviceready", onDeviceReady, false);
+function isDeviceReady() {
+    if (deviceIsReady === false) {
+        showErrorMessage('device not ready');
+        log('device not ready');
+        return false;
+    }
+    return true;
+}

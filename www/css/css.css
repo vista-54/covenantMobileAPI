@@ -89,11 +89,13 @@ section{
 
 }
 .calendar_date{
+    font-size: 36px;
     display: block;
-    margin: 26px 0 -20px 0;
+    /* margin: 26px 0 -20px 0; */
     font-weight: bold;
 
-    color: grey;
+    /* color: grey; */
+    /* float: left; */
 }
 .calendar_title{
     display: block;
@@ -134,8 +136,13 @@ section{
     
 }
 #list p{
-    color: blue;
-    
+    /* color: blue; */
+    margin: -19px 0 0 0;
     text-decoration: underline;
     cursor: pointer;
+}
+.calendar_body{
+    display: block;
+    
+    margin: 0 0 0 27px;
 }

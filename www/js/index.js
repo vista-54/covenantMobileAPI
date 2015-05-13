@@ -145,11 +145,30 @@ function RequestCalendarData() {
     GetEvent(data, afterResponse);
     function afterResponse(result) {
         console.log(result.data);
-
+//        var d =result.data.field_date_value.substring(8,11);
+//        cvnt.Calendar.push(d);
+        var lastDate = '';
         for (var i in result.data)
         {
             var obj = result.data[i];
-            var row = "<span class=\"calendar_date\">" + obj.field_date_value + "</span><br>" + "<span class=\"calendar_title\">" + obj.title + "</span><br></div>";
+            var date = obj.field_date_value.substring(8, 11);
+            var time = obj.field_date_value.substring(10);
+            console.log(date, time, lastDate);
+            if (date != lastDate) {
+                var Date = "<span class=\"calendar_date\">"+date+"</span>";
+            }
+            else {
+                Date='';
+            }
+            var resultDate = "<span class=\"calendar_body\">"+time+"<span>";
+            lastDate = date;
+
+            var row = Date+" "+ resultDate + "  " + obj.title;
+//            <br><span>"+obj.title+"</span><br>";
+//            <span class=\"calendar_date\">" + obj.field_date_value.substring(8,11) + "</span><br>
+//            + "<span class=\"calendar_title\">" + obj.title + "</span><br></div>"
+//            alert(obj.field_date_value.charAt(10));
+
             cvnt.Calendar.push(row);
         }
 
@@ -295,26 +314,26 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 function Calendar() {
-    
 
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev',
-                center: 'title',
-                right: 'next'
-            },
-            viewRender: function (view, element) {
+
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev',
+            center: 'title',
+            right: 'next'
+        },
+        viewRender: function (view, element) {
 //                var date=new Date();
-                var date = $('#calendar').fullCalendar('getDate');
-                cvnt.getDate = dateFormat(date, 'isoDate'); //date.format();
+            var date = $('#calendar').fullCalendar('getDate');
+            cvnt.getDate = dateFormat(date, 'isoDate'); //date.format();
 //                alert(cvnt.getDate);
-                RequestCalendarData();
-            }
-        });
+            RequestCalendarData();
+        }
+    });
 
 
 
-  
+
 
 }
 

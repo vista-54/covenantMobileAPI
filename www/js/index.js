@@ -163,7 +163,7 @@ function RequestCalendarData() {
             var obj = result.data[i];
             var date = obj.field_date_value.substring(8, 11);
             var time = obj.field_date_value.substring(10);
-            console.log(date, time, lastDate);
+//            console.log(date, time, lastDate);
             if (date != lastDate) {
                 var Date = "<span class=\"calendar_date\">"+date+"</span>";
             }

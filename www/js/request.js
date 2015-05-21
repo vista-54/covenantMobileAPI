@@ -6,7 +6,7 @@
 
 /* global cvnt */
 
-cvnt.originalHost = 'http://192.168.0.110/covenantpresby/public_html/mobile/';
+cvnt.originalHost = 'http://159.224.220.250/public_html/mobile/';
 
 var url = {
     refresh: 'refresh.php'
